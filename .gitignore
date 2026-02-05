@@ -1,0 +1,40 @@
+# =========================
+# ROS 2 Colcon build 
+# ==========================
+build/
+install/
+log/
+
+# Colcon layout file
+.colcon_install_layout
+
+# ==========================
+# Python compile and cache file
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python distribution & package
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================
+# IDE config
+# ==========================
+.vscode/
+.idea/
+*.swp
+
+# ==========================
+# OS file
+# ==========================
+.DS_Store
+Thumbs.db
