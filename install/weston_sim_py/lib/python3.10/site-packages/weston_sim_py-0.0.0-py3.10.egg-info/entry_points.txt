@@ -1,3 +1,0 @@
-[console_scripts]
-run_sim = weston_sim_py.simulator:main
-
