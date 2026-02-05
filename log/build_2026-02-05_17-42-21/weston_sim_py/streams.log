@@ -1,0 +1,37 @@
+[0.253s] Invoking command in '/home/tarshin/Weston_SLAM_ws/src/weston_sim_py': PYTHONPATH=/home/tarshin/Weston_SLAM_ws/build/weston_sim_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weston_sim_py build --build-base /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build install --record /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/install.log --single-version-externally-managed install_data
+[0.346s] running egg_info
+[0.346s] creating ../../build/weston_sim_py/weston_sim_py.egg-info
+[0.346s] writing ../../build/weston_sim_py/weston_sim_py.egg-info/PKG-INFO
+[0.346s] writing dependency_links to ../../build/weston_sim_py/weston_sim_py.egg-info/dependency_links.txt
+[0.346s] writing entry points to ../../build/weston_sim_py/weston_sim_py.egg-info/entry_points.txt
+[0.346s] writing requirements to ../../build/weston_sim_py/weston_sim_py.egg-info/requires.txt
+[0.346s] writing top-level names to ../../build/weston_sim_py/weston_sim_py.egg-info/top_level.txt
+[0.346s] writing manifest file '../../build/weston_sim_py/weston_sim_py.egg-info/SOURCES.txt'
+[0.346s] reading manifest file '../../build/weston_sim_py/weston_sim_py.egg-info/SOURCES.txt'
+[0.347s] writing manifest file '../../build/weston_sim_py/weston_sim_py.egg-info/SOURCES.txt'
+[0.347s] running build
+[0.347s] running build_py
+[0.347s] creating /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build
+[0.347s] creating /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build/lib
+[0.347s] creating /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build/lib/weston_sim_py
+[0.347s] copying weston_sim_py/__init__.py -> /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build/lib/weston_sim_py
+[0.347s] copying weston_sim_py/simulator.py -> /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build/lib/weston_sim_py
+[0.347s] running install
+[0.347s] running install_lib
+[0.347s] creating /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages/weston_sim_py
+[0.347s] copying /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build/lib/weston_sim_py/__init__.py -> /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages/weston_sim_py
+[0.348s] copying /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build/lib/weston_sim_py/simulator.py -> /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages/weston_sim_py
+[0.348s] byte-compiling /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages/weston_sim_py/__init__.py to __init__.cpython-310.pyc
+[0.348s] byte-compiling /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages/weston_sim_py/simulator.py to simulator.cpython-310.pyc
+[0.348s] running install_data
+[0.348s] creating /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/share/ament_index
+[0.348s] creating /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/share/ament_index/resource_index
+[0.348s] creating /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/share/ament_index/resource_index/packages
+[0.348s] copying resource/weston_sim_py -> /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/share/ament_index/resource_index/packages
+[0.348s] copying package.xml -> /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/share/weston_sim_py
+[0.348s] running install_egg_info
+[0.350s] Copying ../../build/weston_sim_py/weston_sim_py.egg-info to /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages/weston_sim_py-0.0.0-py3.10.egg-info
+[0.350s] running install_scripts
+[0.358s] Installing run_sim script to /home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/weston_sim_py
+[0.358s] writing list of installed files to '/home/tarshin/Weston_SLAM_ws/build/weston_sim_py/install.log'
+[0.369s] Invoked command in '/home/tarshin/Weston_SLAM_ws/src/weston_sim_py' returned '0': PYTHONPATH=/home/tarshin/Weston_SLAM_ws/build/weston_sim_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tarshin/Weston_SLAM_ws/install/weston_sim_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weston_sim_py build --build-base /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/build install --record /home/tarshin/Weston_SLAM_ws/build/weston_sim_py/install.log --single-version-externally-managed install_data
