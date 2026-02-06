@@ -202,7 +202,9 @@ class WestonSimulator(Node):
             
             # avoid parallel, which will divide by 0
             # if denom close 0，then will be infinite large
+            denom = np.where(np.abs(denom) < 1e-6, 1e-6, denom)
             valid_mask = np.abs(denom) > 1e-6
+            
             
             # calculate t (distance) 和 u (intersection)
             # vector calculation, 260 dimension
