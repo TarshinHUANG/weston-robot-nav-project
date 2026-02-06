@@ -1,0 +1,19 @@
+# 1. compile
+build/
+install/
+log/
+
+# 2. git history
+.git/
+
+# 3. IDE
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+
+# 4. docs
+README.md
+
+# ! don't ignore docker/ file
