@@ -47,6 +47,12 @@ ament_target_dependencies(weston_bt_plugins
 install(TARGETS weston_bt_plugins
   LIBRARY DESTINATION lib/${PROJECT_NAME}
 )
+
+# Install Behavior Tree XML files
+install(DIRECTORY behavior_trees/
+  DESTINATION share/${PROJECT_NAME}/behavior_trees
+)
+
 target_include_directories(weston_bt_plugins PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>

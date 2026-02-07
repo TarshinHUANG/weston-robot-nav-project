@@ -1,0 +1,22 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Repeat num_cycles="-1"> <RecoveryNode number_of_retries="10" name="GlobalRecovery">
+        
+        <ReactiveSequence name="SafetyPatrol">
+          
+          <InjectFailure name="SafetyCheck"/>
+          
+          <NavigateToPose pose="2.0; 2.0; 0.0; 1.0" />
+          
+        </ReactiveSequence>
+
+        <Sequence name="RecoveryActions">
+          <Spin spin_dist="1.57"/>
+          <Wait wait_duration="2.0"/>
+          <ClearEntireCostmap service_name="global_costmap/clear_entirely_global_costmap"/>
+        </Sequence>
+      
+      </RecoveryNode>
+    </Repeat>
+  </BehaviorTree>
+</root>
