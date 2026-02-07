@@ -1,0 +1,5 @@
+<library path="weston_bt_plugins">
+  <class name="weston_robot_cpp/InjectFailure" type="weston_robot_cpp::InjectFailure" base_class_type="BT::TreeNode">
+    <description>Condition node that fails if ros param 'inject_failure' is true.</description>
+  </class>
+</library>
