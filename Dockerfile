@@ -10,6 +10,9 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-numpy \
+    ros-humble-navigation2 \
+    ros-humble-nav2-bringup \
+    ros-humble-tf2-ros \
     && rm -rf /var/lib/apt/lists/*
 
 # Install additional Python dependencies via pip if needed
@@ -20,6 +23,8 @@ WORKDIR /root/WESTON_SLAM_WS
 
 # 5. [IMPORTANT] Copy source code into the container
 COPY ./src ./src
+COPY ./maps ./maps
+
 
 # 6. [IMPORTANT] Build the workspace
 # This ensures the project is pre-built when reviewers pull the image
