@@ -58,6 +58,12 @@ target_include_directories(weston_bt_plugins PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 
+# install launch files
+install(DIRECTORY launch/
+  DESTINATION share/${PROJECT_NAME}/launch
+)
+
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
