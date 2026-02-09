@@ -19,9 +19,16 @@ def generate_launch_description():
     # Update this path if the map location changes.
     map_file_path = os.path.join(os.getenv('HOME'), 'Weston_SLAM_ws/maps/sim_map.yaml')
 
-    # Default Nav2 parameter file
-    nav2_params_path = os.path.join(pkg_nav2, 'params', 'nav2_params.yaml')
+    # Default Nav2 parameter file, 
+    # pointing to our custom config
+    nav2_params_path = os.path.join(pkg_weston_cpp, 'config', 'nav2_params.yaml')
 
+
+    # default behavior tree xml file path
+    # pointing to our custom loop bt xml
+    default_bt_xml_path = os.path.join(pkg_weston_cpp, 'behavior_trees', 'loop1_bt.xml')
+    
+    
     # ======================================================
     # 2. Launch Arguments
     # ======================================================
@@ -37,13 +44,17 @@ def generate_launch_description():
     #
     # Default: Nav2 built-in BT (used for Task 2).
     # When running Task 3, pass your custom patrol_bt.xml via CLI.
+    params_file_arg = DeclareLaunchArgument(
+        'params_file',
+        default_value=nav2_params_path,
+        description='Full path to the ROS2 parameters file to use for all launched nodes'
+    )
+
+    # Argument C: BT XML
+    # change default to loop_bt.xml
     bt_xml_arg = DeclareLaunchArgument(
         'bt_xml',
-        default_value=os.path.join(
-            pkg_nav2,
-            'params',
-            'navigate_to_pose_w_replanning_and_recovery.xml'
-        ),
+        default_value=default_bt_xml_path,
         description='Full path to Behavior Tree XML file'
     )
 
@@ -76,8 +87,8 @@ def generate_launch_description():
         launch_arguments={
             'map': LaunchConfiguration('map'),
             'use_sim_time': 'False',  # Set to True only if a simulated clock is used
-            'params_file': nav2_params_path,
-            'default_bt_xml_filename': LaunchConfiguration('bt_xml')  # Inject custom BT
+            'params_file': LaunchConfiguration('params_file'),
+            'default_bt_xml_filename': LaunchConfiguration('bt_xml')  # use loop_bt.xml
         }.items()
     )
 
@@ -102,6 +113,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         map_arg,
+        params_file_arg,
         bt_xml_arg,
         simulator_node,
         tf_patch_node,

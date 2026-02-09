@@ -1,0 +1,42 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Repeat num_cycles="-1" name="InfiniteLoop">
+      <Sequence name="SquarePatrol">
+        
+        <SetBlackboard output_key="goal" value="3.0;0.0;0.0;1.0" />
+        <SubTree ID="NavigateWithSafety" target_goal="{goal}" />
+        <Wait wait_duration="1.0"/>
+
+        <SetBlackboard output_key="goal" value="3.0;3.0;0.707;0.707" />
+        <SubTree ID="NavigateWithSafety" target_goal="{goal}" />
+        <Wait wait_duration="1.0"/>
+
+        <SetBlackboard output_key="goal" value="0.0;3.0;1.0;0.0" />
+        <SubTree ID="NavigateWithSafety" target_goal="{goal}" />
+        <Wait wait_duration="1.0"/>
+
+        <SetBlackboard output_key="goal" value="0.0;0.0;-0.707;0.707" />
+        <SubTree ID="NavigateWithSafety" target_goal="{goal}" />
+        <Wait wait_duration="1.0"/>
+
+      </Sequence>
+    </Repeat>
+  </BehaviorTree>
+
+  <BehaviorTree ID="NavigateWithSafety">
+    <RecoveryNode number_of_retries="6">
+      <PipelineSequence>
+        <RateController hz="2.0">
+            <InjectFailure name="SafetyCheck"/>
+        </RateController>
+        <NavigateToPose goal="{target_goal}" />
+      </PipelineSequence>
+      
+      <RoundRobin name="RecoveryActions">
+        <ClearEntireCostmap name="ClearLocal" service_name="local_costmap/clear_entirely_local_costmap"/>
+        <Spin spin_dist="1.57"/>
+        <Wait wait_duration="2.0"/>
+      </RoundRobin>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

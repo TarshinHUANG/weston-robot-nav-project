@@ -53,6 +53,11 @@ install(DIRECTORY behavior_trees/
   DESTINATION share/${PROJECT_NAME}/behavior_trees
 )
 
+# install config files (Nav2 params)
+install(DIRECTORY config/
+  DESTINATION share/${PROJECT_NAME}/config
+)
+
 target_include_directories(weston_bt_plugins PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
