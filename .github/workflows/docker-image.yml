@@ -5,14 +5,26 @@ on:
     branches: [ "origin" ]
   pull_request:
     branches: [ "origin" ]
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: |
+        # Build image specifically for Ubuntu 22.04
+        docker build . \
+          --file Dockerfile \
+          --build-arg UBUNTU_VER=22.04 \
+          --tag weston_slam_image:22.04
+
+    - name: Verify Build
+      run: |
+        # Run a simple command to verify the environment is functional
+        # Since GUI (X11) is not available in CI, we perform a CLI-based check
+        docker run --rm weston_slam_image:22.04 bash -c "ls /workspace && echo 'Build Verified for Ubuntu 22.04!'"
