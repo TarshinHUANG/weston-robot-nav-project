@@ -4,6 +4,8 @@ FROM osrf/ros:humble-desktop
 # 2. Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+# set workspace name for flexibility
+ENV WORKSPACE_NAME=WESTON_SLAM_WS
 SHELL ["/bin/bash", "-c"]
 
 # 3. Install required packages

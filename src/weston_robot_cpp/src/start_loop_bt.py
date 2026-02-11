@@ -2,7 +2,8 @@ import rclpy
 import time
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 from geometry_msgs.msg import PoseStamped
-
+import os
+from ament_index_python.packages import get_package_share_directory
 
 def main():
     # Initialize ROS 2 Python client library
@@ -61,11 +62,10 @@ def main():
 
     # Path to the custom Behavior Tree XML
     # Note: Make sure this path is correct.
-    # It is recommended to use an absolute path for initial testing.
-    bt_xml_path = (
-        '/home/tarshin/Weston_SLAM_ws/src/'
-        'weston_robot_cpp/behavior_trees/loop_bt.xml'
-    )
+    # relative location for docker
+    pkg_weston_cpp = get_package_share_directory('weston_robot_cpp')
+    bt_xml_path = os.path.join(pkg_weston_cpp, 'behavior_trees', 'loop_bt.xml')
+
 
     # Run patrol in an infinite loop
     while True:
