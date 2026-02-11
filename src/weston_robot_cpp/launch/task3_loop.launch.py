@@ -26,7 +26,7 @@ def generate_launch_description():
 
     # default behavior tree xml file path
     # pointing to our custom loop bt xml
-    default_bt_xml_path = os.path.join(pkg_weston_cpp, 'behavior_trees', 'loop1_bt.xml')
+    default_bt_xml_path = os.path.join(pkg_weston_cpp, 'behavior_trees', 'loop_bt.xml')
     
     
     # ======================================================
