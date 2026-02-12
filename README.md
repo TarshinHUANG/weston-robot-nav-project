@@ -9,8 +9,6 @@ It integrates:
 
 > Focus: software architecture, robustness under failures, and reproducibility.
 
----
-
 ## 1. Requirements Coverage (Traceability)
 
 This repository is built to satisfy the evaluation requirements:
@@ -18,8 +16,6 @@ This repository is built to satisfy the evaluation requirements:
 - **Nav2 integration**: global/local planning + execution, perfect/mildly noisy localization  
 - **BT application behavior**: mission logic (loop patrol), progress monitoring, recovery escalation, safety gating, plus at least one configurable failure injection
 - **Demos**: (1) normal mission execution (2) persistent obstacle / blocked path
-
----
 
 ## 2. Repository Structure
 
@@ -59,14 +55,24 @@ This repository is built to satisfy the evaluation requirements:
 
 ## 3. Dependencies & Environment
 
+
+The project is developed and tested with the following environment:
+
+### System
+- Ubuntu 22.04
 - ROS 2 Humble
-    - tf2
-    - Nav2 (nav2_bringup, navigation2)
-- Ubuntu 22.04 (native & CI via Docker/GitHub Actions)
-- python3
-    - numpy
-    - pip 
-- cpp
+
+### ROS2 Packages
+- tf2
+- Nav2
+  - `nav2_bringup`
+  - `navigation2`
+
+### Programming Languages
+- Python 3 
+  - numpy
+  - pip
+- C++ (custom BT nodes & integration)
 
 ---
 
@@ -87,8 +93,10 @@ docker run -it --rm weston_slam_image
 ## 4.3 Run container with GUI
 
 ```bash
+# Allow Docker to access the X11 display:
 xhost +local:docker
 
+# Run container with GUI forwarding:
 docker run -it --rm \
     --net=host \
     --env="DISPLAY" \
@@ -109,8 +117,8 @@ source install/setup.bash
 
 # 6. Running the System
 ## 6.1 Task 1 – Simulator (2D Kinematics + Lidar)
-This step launches the lightweight 2D simulator and verifies that:
 
+This step launches the lightweight 2D simulator and verifies that:
 - `/odom` and `/tf` are published correctly
 - `/scan` (lidar) updates while the robot moves
 - velocity commands from `/cmd_vel` drive the robot
