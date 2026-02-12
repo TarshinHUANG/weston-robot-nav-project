@@ -133,7 +133,7 @@ Then will be a black Rviz, need to do some settings
 - Global Options → Fixed Frame: odom
 - Add → TF
 - Add → LaserScan
-![alt text ](images\task1_laserscan.png)
+![alt text ](images/task1_laserscan.png)
 
 ### Terminal C – Send velocity command
 ```bash
@@ -141,7 +141,7 @@ ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z:
 ```
 The robot will run circle, then the laser scan will updagtes.
 
-![alt text ](images\task1_circle.png)
+![alt text ](images/task1_circle.png)
 
 ## 6.2 Task2 - Nav2 integration
 
@@ -168,7 +168,7 @@ Use the following tools from the top toolbar:
 
 Now we can get the path planning.
 
-![alt text ](images\task2_nav2.png)
+![alt text ](images/task2_nav2.png)
 
 ## 6.3 Task3 - BT-based looping patrol
 This step demonstrates application-level autonomy using a Behavior Tree (BT).
