@@ -204,7 +204,7 @@ python3 src/weston_robot_cpp/src/start_loop_bt.py
 - The robot continuously navigates between predefined waypoints.
 - The loop repeats indefinitely unless interrupted.
 
-![alt text ](images\task3_loop.png)
+![alt text ](images/task3_loop.png)
 
 ## 6.4 Other Task3 is still under working
 ros2 launch weston_robot_cpp task3_loop.launch.py
