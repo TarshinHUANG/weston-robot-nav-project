@@ -17,7 +17,8 @@ def generate_launch_description():
     # The map file is assumed to be located under the workspace root at:
     #   ~/Weston_SLAM_ws/maps/sim_map.yaml
     # Update this path if the map location changes.
-    map_file_path = os.path.join(os.getenv('HOME'), 'Weston_SLAM_ws/maps/sim_map.yaml')
+    ws_name = os.getenv('WORKSPACE_NAME', 'Weston_SLAM_ws')
+    map_file_path = os.path.join(os.getenv('HOME'), ws_name, 'maps/sim_map.yaml')
 
     # Default Nav2 parameter file
     nav2_params_path = os.path.join(pkg_nav2, 'params', 'nav2_params.yaml')
