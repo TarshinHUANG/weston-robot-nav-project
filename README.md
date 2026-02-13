@@ -147,7 +147,7 @@ Then will be a black Rviz, need to do some settings
 ```bash
 ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.5}}"
 ```
-The robot will run circle, then the laser scan will updagtes.
+The robot will run circle, then the laser scan will update while moving.
 
 ![alt text ](images/task1_circle.png)
 
@@ -214,24 +214,4 @@ python3 src/weston_robot_cpp/src/start_loop_bt.py
 
 ![alt text ](images/task3_loop.png)
 
-## 6.4 Other Task3 is still under working
-ros2 launch weston_robot_cpp task3_loop.launch.py
 
-
-
-
-## 7. CI / Reproducibility Notes
-
-Dockerfile ensures reproducible builds
-
-CI targets Ubuntu 22.04 
-
-Workspace builds with `colcon build` 
-
-## 8. Known Limitations / Future Work
-
-(example) localization is perfect / mildly noisy (no SLAM)
-
-(example) limited obstacle dynamics
-
-(example) additional recovery behaviors can be extended

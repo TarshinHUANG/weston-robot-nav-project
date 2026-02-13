@@ -23,7 +23,7 @@ def generate_launch_description():
 
     # Default Nav2 parameter file, 
     # pointing to our custom config
-    nav2_params_path = os.path.join(pkg_weston_cpp, 'config', 'nav2_params.yaml')
+    nav2_params_path = os.path.join(pkg_weston_cpp, 'config', 'nav2_params_loop.yaml')
 
 
     # default behavior tree xml file path
