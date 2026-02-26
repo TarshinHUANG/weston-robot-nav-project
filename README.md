@@ -1,4 +1,4 @@
-# Weston Robot AE Evaluation Project – Minimal Mobile Robot Autonomy (ROS2 Humble + Nav2 + BT)
+# Autonomous Mobile Robot Navigation System (ROS2 Humble + Nav2 + BT)
 
 A minimal (yet realistic) software-centric mobile robot autonomy system for patrolling in a known 2D environment.
 It integrates:
